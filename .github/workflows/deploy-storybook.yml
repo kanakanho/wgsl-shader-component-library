@@ -5,15 +5,9 @@ on:
     branches:
       - main
 
-env:
-  WORKING_DIRECTORY: application
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
       - name: Chekcout code
         uses: actions/checkout@v4
@@ -34,7 +28,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # 絶対パスを指定
-          path: ${{ env.WORKING_DIRECTORY }}/storybook-static
+          path: ./storybook-static
 
   # Deploy the artifact to GitHub pages.
   # This is a separate job so that only actions/deploy-pages has the necessary permissions.
