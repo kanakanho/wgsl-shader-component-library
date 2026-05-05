@@ -1,8 +1,9 @@
+import shaderSource from './shader/default.wgsl?raw'
+import WebGPU from './WebGPU'
+
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to the WGSL Shader Component Library</h1>
-    </div>
+    <WebGPU bpm={120} r={1} g={1} b={1} shaderSource={shaderSource} />
   )
 }
 
