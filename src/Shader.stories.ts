@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import base from './shader/base.wgsl?raw'
 import chromaticAberration from './shader/chromaticAberration.wgsl?raw'
+import circle from './shader/circle.wgsl?raw'
 import expansionCircle from './shader/expansionCircle.wgsl?raw'
 import frostedGlass from './shader/frostedGlass.wgsl?raw'
 import hexagram from './shader/hexagram.wgsl?raw'
@@ -110,5 +111,15 @@ export const Ring: Story = {
     r: 127,
     g: 127,
     b: 127,
+  },
+}
+
+export const Cricle: Story = {
+  args: {
+    shaderSource: circle,
+    bpm: 60,
+    r: 127,
+    g: 0,
+    b: 15,
   },
 }
